@@ -39,7 +39,7 @@ export default {
   name: 'AppLandingPage',
   data() {
     return {
-      appName: 'Dreameater',
+      appName: 'Dream Eater',
       appDescription: 'Journal your dreams and unlock the power of your subconscious',
       screenshots: [
         require('@/assets/dreameater1.png'),
@@ -51,8 +51,8 @@ export default {
       appStoreLink: 'https://apps.apple.com/us/app/dreameater/id6474666426',
       features: [
         { title: 'Dream Journal', description: 'Easily record and organize your dreams with our intuitive interface.' },
-        { title: 'Dream Analysis', description: 'Gain insights into your subconscious mind with our AI-powered dream analysis.' },
-        { title: 'Dream Patterns', description: 'Discover recurring themes and symbols in your dreams over time.' },
+        { title: 'Dream Analysis', description: 'Gain insights into your subconscious mind with our ML-powered dream analysis.' },
+        { title: 'Dream Insights', description: 'Discover recurring themes and symbols in your dreams over time.' },
       ],
     }
   },
