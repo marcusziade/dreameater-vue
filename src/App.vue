@@ -32,7 +32,7 @@ export default {
       appName: 'Your iOS App Name',
       appDescription: 'A brief description of your amazing iOS app and its features.',
       screenshots: [
-        '/api/placeholder/300/600',
+        require('@/assets/logo.png'),
         '/api/placeholder/300/600',
         '/api/placeholder/300/600',
       ],
