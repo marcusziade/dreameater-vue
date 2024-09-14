@@ -41,6 +41,18 @@ jobs:
           publish_dir: ./dist
           force_orphan: true
 
+      - name: Verify deployed content
+        run: |
+          git fetch origin gh-pages
+          git checkout gh-pages
+          echo "Contents of root directory on gh-pages branch:"
+          ls -la
+          echo "Contents of index.html on gh-pages branch:"
+          cat index.html
+          echo "Checking for presence of app.js:"
+          ls -la js
+        if: success()
+
       - name: Debug - Print GitHub Pages URL
         run: |
           echo "Your site should be available at: https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
