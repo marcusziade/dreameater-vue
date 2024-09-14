@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
 
@@ -38,16 +40,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           force_orphan: true
-
-      - name: Debug - Check gh-pages branch
-        run: |
-          git fetch origin gh-pages
-          git checkout gh-pages
-          echo "Contents of root directory on gh-pages branch:"
-          ls -la
-          echo "Contents of index.html on gh-pages branch:"
-          cat index.html
-        if: success()
 
       - name: Debug - Print GitHub Pages URL
         run: |
