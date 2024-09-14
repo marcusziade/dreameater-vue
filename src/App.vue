@@ -29,14 +29,16 @@ export default {
   name: 'AppLandingPage',
   data() {
     return {
-      appName: 'Your iOS App Name',
-      appDescription: 'A brief description of your amazing iOS app and its features.',
+      appName: 'Dreameater',
+      appDescription: 'Dreameater is an iOS app that allows you to journal your dreams.',
       screenshots: [
-        require('@/assets/logo.png'),
-        '/api/placeholder/300/600',
-        '/api/placeholder/300/600',
+        require('@/assets/dreameater1.png'),
+        require('@/assets/dreameater2.png'),
+        require('@/assets/dreameater3.png'),
+        require('@/assets/dreameater4.png'),
+        require('@/assets/dreameater5.png'),
       ],
-      appStoreLink: 'https://apps.apple.com/us/app/your-app-id',
+      appStoreLink: 'https://apps.apple.com/us/app/dreameater/id6474666426',
     }
   }
 }
