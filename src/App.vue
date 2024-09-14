@@ -44,6 +44,7 @@ export default {
       screenshots: [
         require('@/assets/dreameater1.png'),
         require('@/assets/dreameater2.png'),
+        require('@/assets/dreameater6.png'),
         require('@/assets/dreameater3.png'),
         require('@/assets/dreameater4.png'),
         require('@/assets/dreameater5.png'),
