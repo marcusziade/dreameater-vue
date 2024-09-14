@@ -48,6 +48,10 @@ export default {
         require('@/assets/dreameater3.png'),
         require('@/assets/dreameater4.png'),
         require('@/assets/dreameater5.png'),
+        require('@/assets/dreameater7.png'),
+        require('@/assets/dreameater8.png'),
+        require('@/assets/dreameater9.png'),
+        require('@/assets/dreameater10.png'),
       ],
       appStoreLink: 'https://apps.apple.com/us/app/dreameater/id6474666426',
       features: [
@@ -69,40 +73,47 @@ export default {
 .app-container {
   background: linear-gradient(to bottom, #e6f2ff, #ffffff);
   min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrollbar on the body */
 }
-
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0; /* Remove horizontal padding */
 }
-
 .header {
   text-align: center;
   margin-bottom: 3rem;
+  padding: 0 2rem; /* Add padding to header content */
 }
-
 .header h1 {
   font-size: 2.5rem;
   color: #1a365d;
   margin-bottom: 0.5rem;
 }
-
 .header p {
   font-size: 1.25rem;
   color: #4a5568;
 }
-
 .screenshots-container {
   margin-bottom: 3rem;
-  overflow-x: auto;
+  width: 100vw; /* Make container full viewport width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
-
 .screenshots-scroll {
   display: flex;
   gap: 1rem;
+  padding: 0 1rem; /* Add some padding to the sides */
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
 }
-
+.screenshots-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
 .screenshot-image {
   height: 400px;
   width: auto;
@@ -110,12 +121,11 @@ export default {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .cta-button {
   text-align: center;
   margin-bottom: 3rem;
+  padding: 0 2rem; /* Add padding to button container */
 }
-
 .cta-button a {
   display: inline-block;
   background-color: #3182ce;
@@ -127,37 +137,33 @@ export default {
   font-size: 1.25rem;
   transition: background-color 0.3s;
 }
-
 .cta-button a:hover {
   background-color: #2c5282;
 }
-
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
+  padding: 0 2rem; /* Add padding to features grid */
 }
-
 .feature-card {
   background-color: white;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .feature-card h3 {
   font-size: 1.25rem;
   color: #1a365d;
   margin-bottom: 0.5rem;
 }
-
 .feature-card p {
   color: #4a5568;
 }
-
 .footer {
   text-align: center;
   color: #4a5568;
+  padding: 0 2rem; /* Add padding to footer */
 }
 </style>
