@@ -16,19 +16,40 @@ jobs:
         with:
           node-version: '16'
           
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
+      - name: Install dependencies
+        run: npm ci
 
-      - run: npm ci
-      - run: npm run build
+      - name: Build
+        run: npm run build
+
+      - name: Debug - List dist contents
+        run: |
+          echo "Contents of dist folder:"
+          ls -R dist
+          echo "Contents of dist/index.html:"
+          cat dist/index.html
+
+      - name: Create .nojekyll file
+        run: touch dist/.nojekyll
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true
+
+      - name: Debug - Check gh-pages branch
+        run: |
+          git fetch origin gh-pages
+          git checkout gh-pages
+          echo "Contents of root directory on gh-pages branch:"
+          ls -la
+          echo "Contents of index.html on gh-pages branch:"
+          cat index.html
+        if: success()
+
+      - name: Debug - Print GitHub Pages URL
+        run: |
+          echo "Your site should be available at: https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
+        if: success()
